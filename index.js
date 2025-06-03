@@ -940,19 +940,196 @@
 
 
 
-let book = ["JS", "React", "Node"];
-// এক লাইনে destructure করে প্রথম ও শেষটা console.log করো
-let [jsBo0k, reactBook, nodeBook] = book;
-console.log(jsBo0k);
-console.log(nodeBook);
+// let book = ["JS", "React", "Node"];
+// // এক লাইনে destructure করে প্রথম ও শেষটা console.log করো
+// let [jsBo0k, reactBook, nodeBook] = book;
+// console.log(jsBo0k);
+// console.log(nodeBook);
 
-let student = {
-  name: "Rubel",
-  batch: "2025",
-  section: "A"
-};
-// destructuring করে শুধু section টা দেখাও
+// let student = {
+//   name: "Rubel",
+//   batch: "2025",
+//   section: "A"
+// };
+// // destructuring করে শুধু section টা দেখাও
 
-let = {section} = student;
+// let = {section} = student;
 
-console.log(section);
+// console.log(section);
+
+
+// // // ✅ একটা pattern বানাও যেটা শুধু “Lucky” লিখা আছে কি না চেক করে।
+// let str = "Hi Lucky, Will you marry me? Lucky Please respect my proposal";
+// let result = str.match(/Lucky/g);
+// console.log(result)
+
+// // ✅ আরেকটা pattern বানাও যেটা শুধু digit চেক করবে (1-9)।
+
+// let str1 = "Lucky123 wants 5 mangoes and 1000 taka";
+// let result1 = str.match(/\d+/g);
+// console.log(result);  // 👉 ["123", "5", "1000"]
+
+
+
+
+// 🎯 তোমার কাজ আজ:
+// 
+// // একটা custom throw করে error বানাও
+// const myFunc =(a, b)=>{
+//     if(b === 0){
+//         throw new Error('Error Messege');
+//     } return a / b
+// }
+
+
+// // try-catch দিয়ে ২টা bug ধরো
+
+// try{
+//    console.log( myFunc(5, 0))
+// }catch(err){
+//     console.log(err.message); // ✅ Correct spelling
+
+// } 
+
+
+// // ReferenceError এর example দেখাও
+
+// let a = 10 + b;
+
+
+
+// // ১️⃣ একটা function বানাও যেখানে একটা block scope variable declare করবা
+// const myFunc = ()=>{
+//     let funScope = "I'm Funtion Scope";
+//     // Break
+//     if(true){
+//        let blockScope = "I'M BlockScope"
+//     }
+// }
+
+
+// myFunc();
+// // ২️⃣ তারপর function এর বাইরে সেটা access করে error ধরবা
+// try{
+//     console.log(funScope);
+//     //Break
+//     console.log(blockScope);
+// }catch(err){
+//     console.log(err.message);
+// }
+
+// {// undefined
+// // console.log(msg);
+// // var msg = "Hello!";
+// }
+
+// {//solve
+
+// var msg = "Hello!";
+// console.log(msg);
+// }
+
+
+
+// { //Reference error
+// //     greet();
+// // let greet = function() {
+// //   console.log("Hey there!");
+// // };
+// }
+
+
+// { //solve
+    
+// let greet = function() {
+//   console.log("Hey there!");
+// };
+// greet();
+// }
+
+
+// {
+//     "use strict";
+// let a = 10;
+// b = 20;
+// console.log(a + b);
+
+// // Error
+// }'
+
+
+// const student = {
+//   name: "Lucky",
+//   id: 101,
+//   printInfo: function () {
+//     setTimeout(() => {
+//       console.log(`Student: ${this.name}, ID: ${this.id}`);
+//     }, 1000);
+//   }
+// };
+
+// student.printInfo();
+
+// // 📌 Explain: কেন এখানে arrow function use করা ঠিক ছিল?
+// // যেহেতু অ্যারো ফাংশনগুলো তাদের লেক্সিক্যাল স্কোপ থেকে this কে উত্তরাধিকার সূত্রে পায়,
+
+
+// // 🧠 Assignment: Your Own Example!
+// // 👉 তোমার কাজ:
+// // একটা object বানাও (তোমার নাম, age, job থাকবে)।
+// // তাতে showInfo() নামে একটা method থাকবে যেটা this use করে সব print করবে।
+
+// const me = {
+//     name: 'Lucky',
+//     age: 17,
+//     job: 'Web Developer',
+//     showInfo: function(){
+//         console.log(`Hello my name is ${this.name}, I'm ${this.age} years old, I working as a ${this.job}`)
+//     }
+// };
+
+// me.showInfo();
+
+
+
+
+// ✅ Assignment Time 😎
+// 👉 তোর কাজ:
+
+// একটা Car class বানাবি।
+
+class Car{
+  // Constructor এ নিবে — brand আর model।
+  constructor(brand, model){
+    this.brand = brand;
+    this.model = model;
+  }
+// একটা method হবে showDetails() → যেটা বলবে:
+  showDetails(){
+// Brand: Toyota, Model: Corolla
+    console.log(`Brand: ${this.brand}, Model: ${this.model}`)
+  }
+
+}
+
+// তারপর ElectricCar নামে আরেকটা class বানাবি, যেটা Car class কে extend করবে।
+  class ElectricCar extends Car{
+// তার constructor এ নতুন property নিবি: batteryLife
+    constructor(batteryLife){
+      super(batteryLife);
+      this.batteryLife = batteryLife;
+      // একটা নতুন method বানাবি: showBattery() → বলবে:
+    }
+      showBattery(){
+        // Battery Life: 500km
+        console.log(`Battery Life:  ${this.batteryLife}km`)
+      }
+  }
+
+  const myCar = new Car('Toyota', 'Corolla');
+  const battery = new ElectricCar(500);
+
+  myCar.showDetails();
+  battery.showBattery()
+
+ 
