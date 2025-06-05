@@ -1093,43 +1093,197 @@
 
 
 
-// ✅ Assignment Time 😎
-// 👉 তোর কাজ:
+// // ✅ Assignment Time 😎
+// // 👉 তোর কাজ:
 
-// একটা Car class বানাবি।
+// // একটা Car class বানাবি।
 
-class Car{
-  // Constructor এ নিবে — brand আর model।
-  constructor(brand, model){
-    this.brand = brand;
-    this.model = model;
-  }
-// একটা method হবে showDetails() → যেটা বলবে:
-  showDetails(){
-// Brand: Toyota, Model: Corolla
-    console.log(`Brand: ${this.brand}, Model: ${this.model}`)
-  }
+// class Car{
+//   // Constructor এ নিবে — brand আর model।
+//   constructor(brand, model){
+//     this.brand = brand;
+//     this.model = model;
+//   }
+// // একটা method হবে showDetails() → যেটা বলবে:
+//   showDetails(){
+// // Brand: Toyota, Model: Corolla
+//     console.log(`Brand: ${this.brand}, Model: ${this.model}`)
+//   }
 
-}
+// }
 
-// তারপর ElectricCar নামে আরেকটা class বানাবি, যেটা Car class কে extend করবে।
-  class ElectricCar extends Car{
-// তার constructor এ নতুন property নিবি: batteryLife
-    constructor(batteryLife){
-      super(batteryLife);
-      this.batteryLife = batteryLife;
-      // একটা নতুন method বানাবি: showBattery() → বলবে:
-    }
-      showBattery(){
-        // Battery Life: 500km
-        console.log(`Battery Life:  ${this.batteryLife}km`)
-      }
-  }
+// // তারপর ElectricCar নামে আরেকটা class বানাবি, যেটা Car class কে extend করবে।
+//   class ElectricCar extends Car{
+// // তার constructor এ নতুন property নিবি: batteryLife
+//     constructor(brand, model, batteryLife){
+//       super(brand, model);
+//       this.batteryLife = batteryLife;
+//       // একটা নতুন method বানাবি: showBattery() → বলবে:
+//     }
+//       showBattery(){
+//         // Battery Life: 500km
+//         console.log(`Battery Life:  ${this.batteryLife}km`)
+//       }
+//   }
 
-  const myCar = new Car('Toyota', 'Corolla');
-  const battery = new ElectricCar(500);
+//   const myCar = new Car('Toyota', 'Corolla');
+//   const battery = new ElectricCar(500);
 
-  myCar.showDetails();
-  battery.showBattery()
+//   myCar.showDetails();
+//   battery.showBattery()
 
  
+// class Car {
+//   constructor(brand, model) {
+//     this.brand = brand;
+//     this.model = model;
+//   }
+
+//   showDetails() {
+//     console.log(`Brand: ${this.brand}, Model: ${this.model}`);
+//   }
+// }
+
+// class ElectricCar extends Car {
+//   constructor(brand, model, batteryLife) {
+//     super(brand, model); // ✅ ঠিকমতো parent এর constructor কল করলাম
+//     this.batteryLife = batteryLife;
+//   }
+
+//   showBattery() {
+//     console.log(`Battery Life: ${this.batteryLife}km`);
+//   }
+// }
+
+// // ✅ Now testing
+// const myCar = new Car('Toyota', 'Corolla');
+// const batteryCar = new ElectricCar('Tesla', 'Model 3', 500);
+
+// myCar.showDetails();       // ✅ Brand: Toyota, Model: Corolla
+// batteryCar.showDetails();  // ✅ Brand: Tesla, Model: Model 3
+// batteryCar.showBattery();  // ✅ Battery Life: 500km
+
+
+
+// class Mobile{
+//   constructor(brand, model){
+//     this.brand = brand;
+//     this.model = model;
+//   }
+//   showDitails(){
+//     console.log(`Our Brand: ${this.brand}, This is my phone model: ${this.model}`)
+//   }
+// }
+
+// class SmartPhone extends Mobile{
+//   constructor(brand, model, ourBrand){
+    
+//     super(brand, model)
+//     this.ourBrand = ourBrand;
+//   }
+//   showPhone(){
+//     console.log(`My phone ${this.ourBrand} : ${this.brand} => ${this.model}`)
+//   }
+// }
+
+
+// const myPhone = new Mobile('Symphony', 'i32');
+// const myBrand = new SmartPhone( 'Symphony', 'i32', 'Apple');
+// myPhone.showDitails();
+// myBrand.showPhone();
+
+
+
+// import { add, multiPly } from "./math";
+
+
+// console.log(add(6,7));
+// console.log(multiPly(5,7));
+
+// // 👉 Import করলাম
+// import { add, multiply } from './math.js';
+
+// console.log(add(5, 3));         // 8
+// console.log(multiply(4, 2));    // 8
+
+
+// import {  sayHi } from "./math.js";;
+// console.log(sayHi('sazzad'));
+
+// import great from "./math.js";
+
+// console.log(`${great('Tithy')}`);
+
+
+
+// // 🧪 Assignment Time:
+// // নিচের object কে JSON string এ convert করো:
+
+// const book = {
+//   title: "JavaScript Magic",
+//   author: "Lucky Seif",
+//   year: 2025
+// };
+
+// const jsonFormat = JSON.stringify(book);
+// console.log(`Json: ${jsonFormat}`);
+
+// // তারপর JSON string থেকে object বানিয়ে title console এ দেখাও।
+// const jsonToObj = JSON.parse(jsonFormat);
+// console.log(`Book Title: ${jsonToObj.title}`);
+
+
+
+
+// 🔥 Assignment:
+// 👉 নিচের URL থেকে data ফেচ কর:
+
+// https://jsonplaceholder.typicode.com/posts
+// তাহলে:
+ 
+// fetch('https://jsonplaceholder.typicode.com/posts')
+// .then(res => res.json())
+// .then( data=>{
+  
+// for(let i = 0; i < 3; i++){
+//   // প্রথম ৩টা post এর title দেখাও।
+//   const myData = data[i].title;
+//   // console.log() দিয়ে show করো।
+//   console.log(`Title: ${myData}`);
+
+//   }
+// } )
+
+
+
+
+
+
+
+
+// 👨‍🔧 Assignment for You:
+// 👉 কর:
+//  console.log(typeof x) and console.log(typeof y) //দিয়ে check কর values কী type?
+// যদি string detect করিস → "❌ Must be numbers" লিখে error show কর।
+
+// const add = function(a,b){
+//   if(typeof a !== 'number' || typeof b !== 'number'){
+//     return '❌ Inputs must be numbers!';
+//   } 
+//   return a + b;
+// }
+
+// console.log(add(5, '4'))
+
+function divide(a, b){
+  // যদি b = 0 হয়, তাহলে error দিবি
+  if(b === 0 ){
+    return 'error ';
+  }
+    // না হলে  return করবি
+    return a / b;
+
+  // আগে typeof চেক করবি!
+}
+
+console.log(divide(5, 2).toFixed());
