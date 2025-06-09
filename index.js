@@ -1275,15 +1275,291 @@
 
 // console.log(add(5, '4'))
 
-function divide(a, b){
-  // যদি b = 0 হয়, তাহলে error দিবি
-  if(b === 0 ){
-    return 'error ';
-  }
-    // না হলে  return করবি
-    return a / b;
+// function divide(a, b){
 
-  // আগে typeof চেক করবি!
+// //   // আগে typeof চেক করবি!
+// if(typeof a !== 'number' || typeof b !== 'number'){
+//   return 'Error codes'
+// }if(b === 0 ){
+//     // যদি b = 0 হয়, তাহলে error দিবি
+//     return 'error divitio by zero ';
+//   }
+
+//     // না হলে  return করবি
+//     return a / b;
+// }
+
+// const result = divide(5, 5);
+
+// if(typeof result === 'number'){
+//   console.log(result.toFixed());
+// }else{
+//   console.log(result);
+// }
+
+
+
+// // তুমি নিজে এই ফাংশনের মতো আরেকটা ফাংশন লেখো, ধরো GPA স্কোর দেখে Grade বের করবে।
+
+// function checkResult(Student){
+//  try{
+//    const {name, marks} = Student;
+
+//    if(marks === undefined ){
+//     throw new Error('Marks not provided')
+//    }else if( name === undefined){
+//     throw new Error('name not provided')
+//    }
+//    const result = marks >= 40? 'Pass' : 'Faild';
+//    console.log(`${name} has ${result}`)
+//  }catch(err){
+//       console.log(` Error Message: ${err.message}`)
+//  }
+  
+// }
+
+
+// checkResult({name : 'Lucky', marks: 40});
+
+// checkResult({ marks: 40});
+
+
+
+// confuced
+
+
+// function isClose(a, b) {
+//   return Math.abs(a - b) < Number.EPSILON;
+// }
+
+// console.log(isClose(3,6))
+
+
+
+
+
+
+// function calcArea(w, h) {
+//   if (w === null || h === null) {
+//     return "Missing value!";
+//   } 
+//    if (Number.isNaN(w) || Number.isNaN(h)) {
+//     return "Invalid area";
+//   }
+//       const area = w * h;
+//       return "Area is " + area;
+
+// }
+// console.log(calcArea(5,'5'));  // ব্যাকরণগত ভুল আছে!
+
+// function calcArea(w, h){
+//   if (w === null || h === null){
+//     return 'Null imput'
+//   }
+//   if(typeof w !== 'number' || typeof h !== 'number'){
+//     return 'must be number'
+//   }
+
+//   if(Number.isNaN(w) || Number.isNaN(h)){
+//     return 'Not a number'
+//   }
+//   const area = w * h;
+//   return `Area is ${area}`
+// }
+
+
+// console.log(calcArea(5, 7));
+
+
+
+// function sumArray(arr) {
+//   let total = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     total += arr[i];
+//   }
+//   return total;
+// }
+
+// reserved words
+
+// let userLet = 10;
+// const myFunction = "run";
+// var myClass = 5;
+
+// function test() {
+//   var x = 10;
+//   if (true) {
+//     var x = 20;
+//     console.log(x);
+//   }
+//   console.log(x);
+// }
+// test();
+
+
+// let x;
+// console.log(x);
+// console.log(typeof x);
+
+// function myFunc(){
+//   console.log(this) //this er man window object
+// }
+
+
+// const myObj = {
+//   name: 'lucky',
+//   age: 17,
+//   great: function(){
+//     console.log(`Hello ${this.name}`) // this er man object er name
+//   }
+// }
+
+// myObj.great()
+
+// // ----
+
+
+// const myFunct = ()=> {
+//   console.log(this) //this er man window object
+// }
+
+
+// const myObject = {
+//   name: 'lucky',
+//   age: 17,
+//   great: ()=>{
+//     console.log(`Hello my bro ${this.name}`) // this er man window object
+//   }
+// }
+
+// console.log('------------------------------')
+
+// myObject.great()  //Hello my bro undefined asbe 
+
+
+
+// ✅ Q7. একটি ফাংশন লিখো getUserFullName(user) যা নিচের ইনপুট থেকে ফুলনেম রিটার্ন করবে।
+
+
+
+// function getUserFullName(user){
+//   return `My name is ${ user.firstName} ${user.lastName}`;
+// }
+
+
+// const user =  {
+//   firstName: "Rafi",
+//   lastName: "Hasan"
+// };
+
+// // Expected Output: "Rafi Hasan"
+// getUserFullName(user)
+
+
+
+// // ✅ Q8. একটা ফাংশন বানাও getGrade(score) যা ০ থেকে ১০০ স্কোর ইনপুট নিয়ে এই নিয়মে গ্রেড রিটার্ন করবে:
+
+// /* | Score Range | Grade |
+// | ----------- | ----- |
+// | 80-100      | A+    |
+// | 70-79       | A     |
+// | 60-69       | A-    |
+// | 50-59       | B     |
+// | 0-49        | F     |
+//  */
+
+
+// const checkResult = (result)=>{
+//   if( result !== isNaN(result)){
+//     if(result >= 80 && result <= 100 ){
+//       return 'A+';
+//     }else if(result >= 70 && result < 79 ){
+//       return 'A';
+//     }else if(result >= 60 && result < 69 ){
+//       return 'A-';
+//     }else if(result >= 50 && result < 59 ){
+//       return 'B'
+//     }else if(result >= 40 && result < 49 ){
+//       return 'F'
+//     }else{
+//       return `${result} not accepted`
+//     }
+//   }
+// }
+
+
+
+
+// console.log(checkResult('fh'))
+
+
+// function getGrade(score) {
+//   if (typeof score !== 'number' || isNaN(score)) {
+//     return "Invalid input";
+//   }
+
+//   if (score >= 80 && score <= 100) return 'A+';
+//   else if (score >= 70) return 'A';
+//   else if (score >= 60) return 'A-';
+//   else if (score >= 50) return 'B';
+//   else return 'F';
+// }
+
+// function getGrade(score){
+//   if(typeof score !== 'number'  || isNaN(score)){
+//     return 'Invalid input';
+//   }
+//   if( score >= 80 && score <= 100) return 'A+';
+//   else if (score >= 70) return 'A';
+//   else if (score >= 60) return 'A-';
+//   else if (score >= 50) return 'B';
+//   else return 'F';
+// }
+
+// console.log(getGrade('68')) // Output: Invalid input
+// console.log(getGrade(76)) // Output: A
+
+// JavaScript Problem 1
+/*
+const sentence = "Hi my name is Lucky, I'm 17 years old. and now a time feel in love, I love Tithy, Tithy is my Best freind, and I realy love to him, Tithy I love you";
+
+const match = sentence.match(/Tithy/gi);
+const occurance  = match ? match.length : 0;
+console.log(match, occurance);
+
+let position =  sentence.search(/Tithy/i);
+position = position >= 0 ? position : 'Not found';
+console.log(position); */
+
+// JS Problem 2
+/*
+function liniarSerch(arr, val){
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === val) return i + 1;
+  }
+  return 'Not Found'
+}
+console.log(liniarSerch(['a','b','c','d','e', 'f'], 'e')) */
+
+// ---------------------
+// 1
+// নিচের ফাংশনে typeof ব্যবহার করে চেক করো ইনপুটটা স্ট্রিং কিনা।
+function isString(input) {
+  const isStr = typeof input === 'string' ? `isString: ${input}` : `${input} not string, type: ${typeof input}`;
+  console.log(isStr);
 }
 
-console.log(divide(5, 2).toFixed());
+isString('hello');
+
+// 2
+
+// একটি সংখ্যা ইনপুট নিয়ে বলো এটা Even না Odd
+function isEvenOrOdd(num) {
+  let numbers = num % 2 === 0? 'Even' : 'odd';
+  console.log(numbers);
+}
+
+isEvenOrOdd(10);
+
+// 3
+
