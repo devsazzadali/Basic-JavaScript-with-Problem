@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h3>Crush</h3>
+<ol id="list">
+  <li class="item">Mim</li>
+  <li class="item">Anni</li>
+  <li class="item">Mukta</li>
+</ol>
+<button id="add">Add New</button>
+
+
+<script>
+const list = document.getElementById("list");
+// getElementsByClassName("item") দিয়ে HTMLCollection নাও
+// querySelectorAll(".item") দিয়ে NodeList নাও
+const item1 = document.querySelectorAll(".item");
+const classNames = document.getElementsByClassName("item");
+// Button
+const button = document.getElementById("add");
+
+
+
+
+button.addEventListener("click", function(e){
+  const li = document.createElement("li");
+    li.classList.add("item");
+    li.innerText = "Tithy";
+    list.insertBefore(li, list.firstChild);
+
+
+    console.log("After Click");
+    console.log(item1.length);
+    console.log(classNames.length)
+});
+// Button এ ক্লিক করলে নতুন <li class="item">New</li> অ্যাড করো
+
+
+// কনসোলে দেখাও কোনটা auto update হয় (Live) আর কোনটা নয়
+
+// .forEach() কোনটাতে চলে আর কোনটাতে চলে না দেখাও
+item1.forEach((el)=>{
+  console.log(el.innerText);
+})
+
+
+
+
+</script>    
+</body>
+</html>

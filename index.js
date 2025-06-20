@@ -1542,24 +1542,241 @@ function liniarSerch(arr, val){
 console.log(liniarSerch(['a','b','c','d','e', 'f'], 'e')) */
 
 // ---------------------
-// 1
-// নিচের ফাংশনে typeof ব্যবহার করে চেক করো ইনপুটটা স্ট্রিং কিনা।
-function isString(input) {
-  const isStr = typeof input === 'string' ? `isString: ${input}` : `${input} not string, type: ${typeof input}`;
-  console.log(isStr);
-}
+// // 1
+// // নিচের ফাংশনে typeof ব্যবহার করে চেক করো ইনপুটটা স্ট্রিং কিনা।
+// function isString(input) {
+//   const isStr = typeof input === 'string' ? `isString: ${input}` : `${input} not string, type: ${typeof input}`;
+//   console.log(isStr);
+// }
 
-isString('hello');
+// isString('hello');
 
-// 2
+// // 2
 
-// একটি সংখ্যা ইনপুট নিয়ে বলো এটা Even না Odd
-function isEvenOrOdd(num) {
-  let numbers = num % 2 === 0? 'Even' : 'odd';
-  console.log(numbers);
-}
+// // একটি সংখ্যা ইনপুট নিয়ে বলো এটা Even না Odd
+// function isEvenOrOdd(num) {
+//   let numbers = num % 2 === 0? 'Even' : 'odd';
+//   console.log(numbers);
+// }
 
-isEvenOrOdd(10);
+// isEvenOrOdd(10);
 
-// 3
+// // 3
 
+// ---------------------Js Object-----------------------------
+
+// ✍️ Practice Problem
+// Problem 1:
+// একটি object তৈরি করো book নামে, যার মধ্যে থাকবে:
+// const book = {
+//     title: 'JavaScript Hero',
+//     author: 'Lucky Seif',
+//     pages: 350
+// };
+// title: "JavaScript Hero"
+// author: "Lucky Rafi"
+// pages: 350
+
+// এবং console.log() দিয়ে author প্রিন্ট করো।
+// console.log(book.author);
+// console.log(book['author']);
+
+// 📘 Assignment
+// Problem 2:
+// user নামে একটি অবজেক্ট তৈরি করো যার মধ্যে:
+
+// name: "Tithy"
+// age: 19
+// isLoggedIn: true
+
+// const user = {
+//   name: 'Swethert Tithy',
+//   age: 19,
+//   isLoggedIn: true
+// };
+
+// 🔹 এরপর name ও isLoggedIn console.log() দিয়ে দেখাও।
+// console.log(`She ${user.name}, is loggedIn ${user.isLoggedIn}`);
+
+
+// // 📘 Assignment
+
+
+// const mobile = {
+//   brand: "Samsung",
+//   model: "A52"
+// };
+
+// mobile.price = 30000;
+// mobile.isAvailable = true;
+
+// console.log(`Brand Name: ${mobile.brand}, Price: ${mobile.price}`)
+
+// // ➕ Add: price = 30000, isAvailable = true
+// // তারপর brand, price প্রিন্ট করো
+
+// const student = {
+//   name: "Lucky",
+//   department: "CSE"
+// };
+
+// // ➕ Add: batch = "28", isActive = true
+// student.batch = 28;
+// student.isActive = true;
+// student.department = "EEE";
+// delete student.isActive;
+// // test,
+// console.log(student)
+// // 📝 Update: department = "EEE"
+// // ❌ Delete: isActive
+// // ✅ Check if "batch" exists
+
+// // const batch = student.batch;
+
+// // if(batch){
+// //   console.log(`Batch is exists, Batch Number: ${batch}`)
+// // }else{
+// //   console.log('Not found batch');
+// // }
+
+// // const batch = student.batch;
+
+// // if("batch" in student){
+// //   console.log(`Batch is exists, Batch Number: ${batch}`)
+// // }else{
+// //   console.log('Not found batch');
+// // }
+
+
+
+// const batch = student.batch;
+
+// if(student.hasOwnProperty("batch")){
+//   console.log(`Batch is exists, Batch Number: ${batch}`)
+// }else{
+//   console.log('Not found batch');
+// }
+
+
+// -------'
+// নিচের object-এ একটি method যোগ করো
+// যেটা return করবে: "Hello, I am <name>"
+// name property টি object-এর ভেতর থেকেই নেওয়া হবে
+
+// const student = {
+//   name: "Tithy",
+//   greet: function(){
+//     return `Hello I'm  ${this.name}`;
+//   }
+// };
+
+// console.log(student.greet());  // "Hello, I am Tithy"
+
+// Second Option:
+
+// const student = {
+//   name: "Tithy",
+//    greet(){
+//     return `Hello I'm ${this.name}`;
+//   }
+// };
+
+// console.log(student.greet());  // "Hello, I am Tithy"
+
+// 📘 Assignment
+// 🔧 নিচের অবজেক্টে:
+
+// ✅ একটি method যোগ করো getSummary()
+
+// যা return করবে:
+// 👉 "Lucky is 17 years old and lives in Bangladesh"
+
+
+// const profile = {
+//   name: "Lucky",
+//   age: 17,
+//   country: "Bangladesh",
+//   getSummary(){
+//     return `Lucky is ${this.age} old and lives in ${this.country},`
+//   }
+// };
+
+// console.log(profile.getSummary());
+
+
+// ------------------------------\
+
+// ১। নিচের object এ get fullName যোগ করো
+// const student = {
+//   firstName: "Tithy",
+//   lastName: "Moni",
+//   get fullName(){
+//     return `${this.firstName} ${this.lastName}`
+//   }
+// };
+
+// // 👉 Output: "Tithy Moni"
+// console.log(student.fullName); 
+// --------------------
+// const profile = {
+//   firstName: "",
+//   lastName: "",
+
+//   set fullName(name){
+//     const parts = name.split(" ");
+//     this.firstName = parts[0];
+//     this.lastName = parts[1];
+//   },
+//   // 👉 set fullName = "Lucky Rafi"
+//   // 👉 get fullName → returns "Lucky Rafi"
+//   get fullName(){
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+// };
+
+
+// profile.fullName = "Lucky Rafi";
+// console.log(profile.firstName); // Lucky
+// console.log(profile.lastName);  // Rafi
+// console.log(profile.fullName);  // Lucky Rafi
+
+
+// -----------------------------------\\
+
+const person = {
+  name: "Lucky",
+  country: "Bangladesh"
+};
+
+// Object.freeze(person);
+Object.freeze(person);
+  person.name = 'Swetheart Tithy';
+  person.love = true;
+
+
+console.log(person);
+// name পরিবর্তন করো
+// নতুন property যোগ করো
+// তারপর console.log(person);
+
+
+
+const account = {
+  holder: "Tithy",
+  balance: 5000
+};
+
+
+// Step 1: seal object
+Object.seal(account);
+
+  account.holder = 'Lucky';
+  account.CashIn = 100; // nw = not working
+  delete account.balance; //nw
+
+console.log(account);
+
+// Step 2: balance = 7000 (✅ update it)
+// Step 3: add new prop => isActive = true (❌)
+// Step 4: delete holder (❌)
+// Step 5: console.log(account);

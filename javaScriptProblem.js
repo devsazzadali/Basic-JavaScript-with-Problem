@@ -159,23 +159,33 @@
 
 
 
-14 
-function factorial(n) {
-if(typeof n !== 'number' || n < 0) return 'Invalid Input';
+// 14 
+// function factorial(n) {
+// if(typeof n !== 'number' || n < 0) return 'Invalid Input';
 
-let result = 1;
+// let result = 1;
 
-for(let i = 2; i <= n; i++){
-  result*= i;
-}
-return result;
+// for(let i = 2; i <= n; i++){
+//   result*= i;
+// }
+// return result;
 
-}
+// }
 
-console.log(factorial([89,65,]))
+// console.log(factorial([89,65,]))
  
 // 15 confuced 
  // C to F formula: (C * 9/5) + 32
+
+// function celsiusToFahrenheit(celsius) {
+//   if (typeof celsius !== 'number') return 'Invalid input';
+
+//   const fahrenheit = (celsius * 9/5) + 32;
+//   return `${celsius}°C = ${fahrenheit}°F`;
+// }
+
+// console.log(celsiusToFahrenheit(0));     // ✅ 0°C = 32°F
+// console.log(celsiusToFahrenheit(100));   // ✅ 100°C = 212°F
 
 
 
@@ -238,3 +248,6 @@ console.log(factorial([89,65,]))
 //   console.log(global); // access
 //   // console.log(local); // can't access: I'ts a local scope
 //   //   console.log(funScope); // can't access: I'ts a function scope
+
+
+

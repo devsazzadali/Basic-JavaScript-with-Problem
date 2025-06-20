@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+
+  .fade-out {
+    opacity: 0;
+  }
+</style>
+<body>
+<button id="fadeBtn" onclick="fadeOut()">Fade</button>
+<button onclick="move()" id="moveBtn">Move</button>
+
+<div id="box">Animate Me</div>
+
+
+
+    <script>
+      const fadeBn = document.getElementById("fadeBtn");
+      const moveBtn = document.getElementById("moveBtn");
+      const box = document.getElementById("box");
+      // যখন #fadeBtn-এ ক্লিক করা হবে, #box এলিমেন্ট fade-out হবে (CSS class দিয়
+  
+      function fadeOut(){
+      box.classList.add("fade-out");
+    }
+  
+    let pos = 0;
+    let animation;
+      // যখন #moveBtn-এ ক্লিক করা হবে, #box বাম থেকে ডানে যাবে setInterval() দিয়ে
+      function move(){
+        animation = setInterval(()=>{
+        if(pos >= 200){
+          clearInterval(animation);
+          console.log("animation clear")
+        }else{
+          pos++;
+          box.style.left =  pos + "px";
+          console.log("animation add")
+        }
+      },5)
+      }
+      // প্রতিটি একশনে console.log() ব্যবহার করুন
+
+
+    </script>
+</body>
+</html>
